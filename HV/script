@@ -1,0 +1,22 @@
+function showWelcomeMessage() {
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    welcomeMessage.innerText = "¡Gracias por tu mensaje! Te responderemos pronto.";
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const welcomeMessage = document.getElementById('welcomeMessage');
+
+    if (name === '' || email === '' || message === '') {
+        welcomeMessage.innerText = "Por favor, completa todos los campos.";
+        welcomeMessage.style.color = "red";
+    } else {
+        welcomeMessage.innerText = "¡Gracias por tu mensaje! Te responderemos pronto.";
+        welcomeMessage.style.color = "#007acc";
+       
+    }
+});
